@@ -2,8 +2,8 @@ import ProjectDescription
 
 private let appName: String = "BestEats"
 private let bundleId: String = "com.bhooncoding.Besteats"
-private let appVersion: String = "2.0.0"
-private let bundleVersion: String = "2"
+private let appVersion: String = "2.0.1"
+private let bundleVersion: String = "3"
 
 // MARK: - Info.plist
 
@@ -12,7 +12,7 @@ private let infoPlist: [String: Plist.Value] = [
         "UIColorName": "",
         "UIImageName": "",
     ],
-    "CFBundleShorVersionString": "\(appVersion)",
+    "CFBundleShortVersionString": "\(appVersion)",
     "CFBundleVersion": "\(bundleVersion)",
     "UIUserInterfaceStyle": "Light",
     "KAKAO_API_KEY": "7072eb0a506b5f651bf1ad06d6f4db81",
@@ -33,7 +33,6 @@ private let infoPlist: [String: Plist.Value] = [
         "Item8": "Pretendard-Thin.otf"
     ],
     "CFBundleIdentifier": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-    
 ]
 
 let project = Project(
@@ -41,7 +40,7 @@ let project = Project(
     targets: [
         .target(
             name: appName,
-            destinations: .iOS,
+            destinations: [.iPhone],
             product: .app,
             bundleId: bundleId,
             deploymentTargets: .iOS("16.0"),
@@ -61,7 +60,7 @@ let project = Project(
         ),
         .target(
             name: "BestEatsTests",
-            destinations: .iOS,
+            destinations: [.iPhone],
             product: .unitTests,
             bundleId: "com.bhooncoding.BesteatsTests",
             infoPlist: .default,
@@ -82,6 +81,8 @@ private func configureSettings() -> Settings {
     .settings(
         base: [
             "DEVELOPMENT_TEAM": "R4G74AF442",
+            "CODE_SIGN_STYLE": "Manual",
+            "PROVISIONING_PROFILE_SPECIFIER": "match Development com.bhooncoding.Besteats",
             "KAKAO_SERVER_HOST": "https://dapi.kakao.com",
             "MARKETING_VERSION": "\(appVersion)",
             "CURRENT_PROJECT_VERSION": "\(bundleVersion)"

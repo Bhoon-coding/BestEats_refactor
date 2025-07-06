@@ -2,8 +2,8 @@ import ProjectDescription
 
 private let appName: String = "BestEats"
 private let bundleId: String = "com.bhooncoding.Besteats"
-private let appVersion: String = "2.0.0"
-private let bundleVersion: String = "2"
+private let appVersion: String = "2.0.1"
+private let bundleVersion: String = "1"
 
 // MARK: - Info.plist
 
@@ -12,7 +12,7 @@ private let infoPlist: [String: Plist.Value] = [
         "UIColorName": "",
         "UIImageName": "",
     ],
-    "CFBundleShorVersionString": "\(appVersion)",
+    "CFBundleShortVersionString": "\(appVersion)",
     "CFBundleVersion": "\(bundleVersion)",
     "UIUserInterfaceStyle": "Light",
     "KAKAO_API_KEY": "7072eb0a506b5f651bf1ad06d6f4db81",
@@ -33,7 +33,6 @@ private let infoPlist: [String: Plist.Value] = [
         "Item8": "Pretendard-Thin.otf"
     ],
     "CFBundleIdentifier": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-    
 ]
 
 
